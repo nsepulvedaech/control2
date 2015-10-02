@@ -11,14 +11,22 @@ mode: selfcontained # {standalone, draft}
     <img width = '80px' src = 'http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png'>
 </a>
 
+#### Reseña de cada empresa
+
+#### Hechos económicos relevantes
+
 #### Gráficos
 
 ```{r}
 #ESCRIBA EL CÓDIGO PARA GENERAR LOS GRÁFICOS
+
+#EJEMPLO
+data(mtcars)
+plot(mtcars$wt,mtcars$mpg)
 ```
 
 
-#### Estadística descriptiva
+#### Análisis estadístico
 
 | Empresa     | Retorno    | Desv. estándar  |
 |-------------|------------|-----------------|
@@ -26,7 +34,11 @@ mode: selfcontained # {standalone, draft}
 | Y           | b%         | e               |
 | Z           | c%         | f               |
 
-#### Inferencia estadística
+|Empresa| $\beta$  | $R^2$ | $t$ | $p$ |
+|-------|----------|-------|-----|-----|
+| X     |          |       |     |     |
+| Y     |          |       |     |     |
+| Z     |          |       |     |     |
 
 Regresión a trabajar
 $$r_i = \alpha + \beta r_m + \varepsilon_i$$ 
@@ -34,4 +46,8 @@ $$r_i = \alpha + \beta r_m + \varepsilon_i$$
 Output de la regresión:
 ```{r}
 #INSERTE SU CÓDIGO
+
+#EJEMPLO
+fit <- lm(mpg ~ wt, mtcars)
+summary(fit)
 ```
