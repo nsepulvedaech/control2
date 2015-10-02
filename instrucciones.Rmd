@@ -1,0 +1,33 @@
+---
+title: "Tarea para el control Nº2"
+subtitle: Análisis de Datos
+author: "Profesores: Ramón H. Cornejo-Muñoz y Felipe Rojas</br>Profesor Ayudante de Laboratorio: Mauricio Vargas</br>Ayudantes: Franco Mansilla y Mauricio Díaz</br></br>Universidad Nacional Andrés Bello"
+output: html_document
+widgets: mathjax
+url:
+  assets: ../../assets
+  lib: ../../libraries
+mode: selfcontained # {standalone, draft}
+---
+
+<a href='http://creativecommons.org/licenses/by-nc-sa/3.0/'>
+    <img width = '80px' src = 'http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png'>
+</a>
+
+###Actividad
+
+1. Obtenga los precios y retornos semanales de las tres empresas asignadas y del índice IGPA desde el 1 de julio de 2012 al 31 de agosto de 2015 en el sitio de la <a href="http://www.bolsadesantiago.com/actores/Paginas/emisores.aspx">Bolsa de Santiago</a>.
+2. Ordene sus resultados en un archivo Excel guarde su archivo en formato XLS o XLSX y haga una copia en formato CSV.
+3. A partir de su archivo CSV en R obtenga lo siguiente:
+    * Retorno esperado de cada empresa
+    * Desviación estándar de los retornos de cada empresa
+    * Matriz de correlación
+4. Realice una regresión de la forma $r_i = \alpha + \beta r_m + \varepsilon_i$ para cada empresa y explique los parámetros y estadísticos de la regresión.      
+5. Resuma todo lo anterior en un informe breve en el que explique el comportamiento de cada acción respecto del comportamiento del mercado. Incluya gráficos de precios y retornos del IGPA y de las empresas asignadas.
+
+
+<b>Importante</b>: Considere como último día de la semana el viernes. Inevitablemente habrá días viernes feriados. En tal caso deberá considerar el día jueves (o incluso miércoles) como último día de la semana. Le puede servir mucho la función WEEKDAY o DIASEM.
+
+
+
+

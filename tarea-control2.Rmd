@@ -1,0 +1,37 @@
+---
+title: "Plantilla para desarrollar la tarea"
+subtitle: Análisis de Datos
+author: "NOMBRE"
+output: html_document
+widgets: mathjax
+mode: selfcontained # {standalone, draft}
+---
+
+<a href='http://creativecommons.org/licenses/by-nc-sa/3.0/'>
+    <img width = '80px' src = 'http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png'>
+</a>
+
+#### Gráficos
+
+```{r}
+#ESCRIBA EL CÓDIGO PARA GENERAR LOS GRÁFICOS
+```
+
+
+#### Estadística descriptiva
+
+| Empresa     | Retorno    | Desv. estándar  |
+|-------------|------------|-----------------|
+| X           | a%         | d               |
+| Y           | b%         | e               |
+| Z           | c%         | f               |
+
+#### Inferencia estadística
+
+Regresión a trabajar
+$$r_i = \alpha + \beta r_m + \varepsilon_i$$ 
+
+Output de la regresión:
+```{r}
+#INSERTE SU CÓDIGO
+```
