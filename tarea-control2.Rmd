@@ -1,7 +1,7 @@
 ---
 title: "Plantilla para desarrollar la tarea"
 subtitle: Análisis de Datos
-author: "NOMBRE"
+author: "Natalia Andrea Sepúlveda Echeverría"
 output: html_document
 widgets: mathjax
 mode: selfcontained # {standalone, draft}
@@ -15,7 +15,41 @@ mode: selfcontained # {standalone, draft}
 
 #### Hechos económicos relevantes
 
+COMPAÑÍA PESQUERA CAMANCHACA S.A.
+ Inició operaciones en el año 1963, centrada en la pesca convencional y procesamiento de camarones y langostinos. Actualmente, la Compañía participa en el negocio de la pesca pelágica, en acuicultura de salmón y cultivo de mejillones, ostiones y abalones, exportando sus productos a más de 50 países. Camanchaca está integrada verticalmente en su cadena productiva y de distribución. El crecimiento de la Compañía la ha llevado a un lugar de privilegio en los mercados internacionales. (www.bolsasantiago.com)
+Antecedentes financieros
+Número de accionistas: 103
+Número de acciones suscritas pagadas: 4.150.672.000
+-	Alianza con China y una inversion de USD 20.6 millones, generan alzas en las acciones de Camanchaca a fines del 2014 y en 2015. (www.emol.com)
+-	En 2015 las acciones caen por efecto de las pérdidas de cultivos por las cenizas del volcán Calbuco. (Por Reuters; www.lasegunda.com)
+
+EMPRESAS AQUACHILE S.A.
+Empresa que produce alimentos a partir del cultivo de especies acuícolas: Salmón del Atlántico, Salmón del Pacífico, Truchas y Tilapias. Opera en Chile, Costa Rica, Panamá y Estados Unidos, vendiendo y comercializando sus productos en todo el mundo.Da trabajo a más de 5.900 personas en Chile, Estados Unidos, Costa Rica y Panamá, y es uno de los mayores productores de Salmón del Pacífico y Trucha a nivel mundial, siendo además, uno de los principales proveedores de Tilapia fresca a los Estados Unidos. (www.bolsasantiago.com)
+Antecedentes financieros
+Número de accionistas: 157
+Número de acciones suscritas pagadas: 1.157.000.000
+-	En Abril de 2013 se presenta una baja de acciones en la bolsa de 13% por brote de virus ISA. (www.latercera.com)
+-	Enero 2015, suben acciones por acuerdo para fusionar sus operaciones con la filial en Chile de la noruega Marine Harvest. (26% suben acciones de Aquachile tras anuncio de fusión con Noruega Marine Harvest, por Javiera Hernández, www.duna.cl)
+
+MULTIFOODS (MULTIEXPORT FOODS S.A.)
+Compañía chilena líder en la producción de salmón atlántico y trucha de cultivo. La empresa está integrada verticalmente, desde la reproducción hasta la comercialización y distribución al cliente final. La compañía cuenta con operaciones en tres regiones de Chile, en las que realiza pisciculturas de agua dulce, concesiones de engorda en agua de mar, plantas de proceso de productos frescos, congelados y ahumados. Cuenta con una red comercial que atiende a todos los mercados del mundo, la cual incluye una filial en Estados Unidos. Es reconocida por la calidad de sus productos y por su gestión empresarial. (www.bolsasantiago.com)
+Antecedentes financieros
+Número de accionistas: 292
+Número de acciones suscritas pagadas: 1.410.665.600 
+-	Alza en el comienzo de 2013, junto con un pronunciado crecimiento de los precios y un incremento en los volúmenes de exportación desde Noruega. Las expectativas para el alza de la oferta global han bajado de 4% a 3% año a año, por la mayor cosecha de salmón en diciembre de 2012. 
+( www.mundoacuicola.cl) 
+-	Octubre 2015 acciones comienzan a subir por alianza con Mitsui (Por Reuters www.emol.com)
+
+
 #### Gráficos
+data(RetornosEmpresas)
+plot(RetornosEmpresas$PRECIOX,RetornosEmpresas$RETORNOX)
+
+data(RetornosEmpresas)
+plot(RetornosEmpresas$PRECIOY,RetornosEmpresas$RETORNOY)
+
+data(RetornosEmpresas)
+plot(RetornosEmpresas$PRECIOZ,RetornosEmpresas$RETORNOZ)
 
 ```{r}
 #ESCRIBA EL CÓDIGO PARA GENERAR LOS GRÁFICOS
@@ -28,17 +62,17 @@ plot(mtcars$wt,mtcars$mpg)
 
 #### Análisis estadístico
 
-| Empresa     | Retorno    | Desv. estándar  |
-|-------------|------------|-----------------|
-| X           | a%         | d               |
-| Y           | b%         | e               |
-| Z           | c%         | f               |
+| Empresa                 | Retorno    | Desv. estándar  |
+|-------------------------|------------|-----------------|
+| X = Camanchaca          | a%         | d               |
+| Y = Aquachile           | b%         | e               |
+| Z = Multifoods          | c%         | f               |
 
-|Empresa| $\beta$  | $R^2$ | $t$ | $p$ |
-|-------|----------|-------|-----|-----|
-| X     |          |       |     |     |
-| Y     |          |       |     |     |
-| Z     |          |       |     |     |
+|Empresa| $\beta$  | $R^2$ | $t$  | $p$ |
+|-------|----------|-------|------|-----|
+| X     |-1.525e+01|0.2469 |-2.538|1.222e-10|
+| Y     |8.462e+01 |0.1173 |1.272 |4.337e-05|
+| Z     |-41.986584| 0.3209|-2.140|2.962e-14|
 
 Regresión a trabajar
 $$r_i = \alpha + \beta r_m + \varepsilon_i$$ 
@@ -46,6 +80,16 @@ $$r_i = \alpha + \beta r_m + \varepsilon_i$$
 Output de la regresión:
 ```{r}
 #INSERTE SU CÓDIGO
+fit <-lm(PRECIOX ~ PRECIOIGPA + RETORNOX, RetornosEmpresas)
+summary.lm(fit)
+
+fit <-lm(PRECIOY ~ PRECIOIGPA + RETORNOY, RetornosEmpresas)
+summary.lm(fit)
+
+fit <-lm(PRECIOZ ~ PRECIOIGPA + RETORNOZ, RetornosEmpresas)
+summary.lm(fit)
+
+
 
 #EJEMPLO
 fit <- lm(mpg ~ wt, mtcars)
